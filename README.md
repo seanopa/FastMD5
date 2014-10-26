@@ -28,10 +28,10 @@ console.log(hash); // -> "900150983cd24fb0d6963f7d28e17f72"
 
 #### Optional
 
-`md5`(`data`, `[arrayOutput]`, `[unicode]`);
+`md5`(`data`, `[ascii]`, `[arrayOutput]`);
 
+- `ascii` - set `true` if `data` consists only of ASCII chars to improve performance
 - `arrayOutput` - if `true`, then the result is an array of chars (not a string)
-- `unicode` - set `true` if there are Unicode chars in `data` to get a correct output
 
 ## License
 

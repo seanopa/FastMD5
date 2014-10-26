@@ -79,7 +79,7 @@
 				var string = "";
 
 				for(var i = 0;i < 55;i++) {
-					if(md5(string) !== md5jkm(string)) return false;
+					if(md5(string, true) !== md5jkm(string)) return false;
 
 					string += "a";
 				}
@@ -96,7 +96,7 @@
 					string += "a";
 
 				for(;i < 64;i++) {
-					if(md5(string) !== md5jkm(string)) return false;
+					if(md5(string, true) !== md5jkm(string)) return false;
 
 					string += "a";
 				}
@@ -113,7 +113,7 @@
 					string += "a";
 
 				for(;i < 1000;i++) {
-					if(md5(string) !== md5jkm(string)) return false;
+					if(md5(string, true) !== md5jkm(string)) return false;
 
 					string += "a";
 				}
@@ -128,10 +128,10 @@
 					string2 = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ",
 					string3 = string1 + string2;
 
-				if(md5(string1, false, true) !== jsmd5(string1)) return false;
-				if(md5(string2, false, true) !== jsmd5(string2)) return false;
+				if(md5(string1) !== jsmd5(string1)) return false;
+				if(md5(string2) !== jsmd5(string2)) return false;
 
-				return md5(string3, false, true) === jsmd5(string3);
+				return md5(string3) === jsmd5(string3);
 			}
 		}
 	];
@@ -227,7 +227,7 @@
 			func: function() {
 				var start = new Date();
 				for(var i = 0;i < 1000000;i++)
-					md5("Hello, World!", true);
+					md5("Hello, World!", true, true);
 				var end = new Date();
 
 				return end - start;
@@ -238,7 +238,7 @@
 			func: function() {
 				var start = new Date();
 				for(var i = 0;i < 1000000;i++)
-					md5("Привет, Мир!", true, true);
+					md5("Привет, Мир!", false, true);
 				var end = new Date();
 
 				return end - start;
