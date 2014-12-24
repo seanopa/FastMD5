@@ -21,14 +21,10 @@
 	-khtml-user-select: none;
 	-moz-user-select: none;
 
-	text-shadow: 1px 1px 0px #000;
+	text-shadow: 1px 1px 0 #000;
 }
 
-::-moz-selection {
-	background: transparent;
-}
-
-::selection {
+::selection, ::-moz-selection {
 	background: transparent;
 }
 
@@ -37,15 +33,15 @@ body {
 	color: #fff;
 	font-family: calibri;
 
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 
 	overflow: hidden;
 }
 
 input {
 	background: #333337;
-	border: none;
+	border: 0;
 
 	width: 300px;
 
@@ -55,7 +51,7 @@ input {
 
 .button-1 {
 	background: #252526;
-	border: none;
+	border: 0;
 	text-align: center;
 
 	width: 120px;
@@ -135,6 +131,7 @@ input {
 
 #content {
 	display: none;
+
 	padding: 15px;
 }
 
@@ -160,8 +157,8 @@ input {
 	height: 24px;
 
 	position: absolute;
-	top: 0px;
-	right: 0px;
+	top: 0;
+	right: 0;
 
 	opacity: 0.75;
 }
@@ -191,10 +188,12 @@ table tr:first-child td {
 
 table tr.error td {
 	background: #600;
+	border-color: #700;
 }
 
 table tr.ok td {
 	background: #060;
+	border-color: #070;
 }
 
 table tr td {
