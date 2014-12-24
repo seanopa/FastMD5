@@ -1,4 +1,4 @@
-;!function() {
+!function() {
 	var d = document;
 
 	function $(id) { return d.getElementById(id); }
@@ -25,7 +25,7 @@
 	// loading
 
 	var loadingInterval = setInterval(function() {
-		if(typeof md5 !== "function") return;
+		if(typeof md5 != "function") return;
 
 		clearInterval(loadingInterval);
 		content.elem.className = "visible";
@@ -55,7 +55,7 @@
 	}
 
 	function selectTab(tab) {
-		if(tabs.indexOf(tab) === -1 || activeTab === tab) return;
+		if(tabs.indexOf(tab) == -1 || activeTab === tab) return;
 
 		if(activeTab !== null) {
 			menu[activeTab].className = "";
@@ -208,7 +208,7 @@
 			tr.className = "ok";
 			state.innerHTML = "OK";
 
-			if(++completeTests === tests.length) {
+			if(++completeTests == tests.length) {
 				run_tests.className = "button-1";
 				run_tests.innerHTML = "Run Tests";
 				testsRunning = false;
@@ -350,7 +350,7 @@
 		time.innerHTML = timeValue + "ms";
 		timeArray.push(timeValue);
 
-		if(++completeBenchmarks === benchmarks.length) {
+		if(++completeBenchmarks == benchmarks.length) {
 			run_benchmark.className = "button-1";
 			run_benchmark.innerHTML = "Run Benchmark";
 			benchmarkRunning = false;
