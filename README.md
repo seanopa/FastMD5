@@ -37,7 +37,7 @@ console.log(hash); // -> "900150983cd24fb0d6963f7d28e17f72"
 
 (The MIT License)
 
-Copyright (c) 2014 iReal
+Copyright (c) 2014-2015 iReal
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
