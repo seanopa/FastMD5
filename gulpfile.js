@@ -5,14 +5,14 @@ var rename =  require("gulp-rename");
 var uglify =  require("gulp-uglify");
 
 gulp.task("build", function() {
-	return gulp.src("src/main.js")
+	return gulp.src("source/md5.js")
 		// non-minified version
 		.pipe(include())
 		.pipe(concat("md5.js"))
-		.pipe(gulp.dest("build"))
+		.pipe(gulp.dest("dist"))
 
 		// minified version
 		.pipe(uglify())
 		.pipe(rename({ extname: ".min.js" }))
-		.pipe(gulp.dest("build"));
+		.pipe(gulp.dest("dist"));
 });

@@ -1,14 +1,14 @@
 {
   "name": "FastMD5",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "Fast JavaScript MD5 library",
-  "author": "iReal",
-  "main": "build/md5.js",
-  "bugs": "https://github.com/iReal/FastMD5/issues",
+  "author": "xibre",
+  "main": "dist/md5.js",
+  "bugs": "https://github.com/xibre/FastMD5/issues",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iReal/FastMD5"
+    "url": "https://github.com/xibre/FastMD5"
   },
   "keywords": [
     "fast",

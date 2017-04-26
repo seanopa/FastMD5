@@ -9,7 +9,7 @@ See latest [jsPerf MD5 comparison](http://jsperf.com/md5-shootout/63).
 
 ## Usage
 
-Grab the [library](https://raw.githubusercontent.com/iReal/FastMD5/master/build/md5.min.js) and include it.
+Grab the [library](https://raw.githubusercontent.com/xibre/FastMD5/master/dist/md5.min.js) and include it.
 
 ```html
 <script src="path_to/md5.min.js"></script>

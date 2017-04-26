@@ -3,13 +3,13 @@
 	<head>
 		<title>FastMD5 files hashing</title>
 		<meta charset="utf-8">
-		<script src="../build/md5.min.js" type="text/javascript"></script>
+		<script src="../dist/md5.min.js"></script>
 	</head>
 	<body>
 		Select a file to hash: <input type="file" id="file_input">
 		<div id="file_hash"></div>
 
-		<script type="text/javascript">
+		<script>
 		+function(g) {
 			if(!(g.File && g.FileReader && g.FileList && g.Blob))
 				return console.log("FileAPI isn't supported in your browser!");
