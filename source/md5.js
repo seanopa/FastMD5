@@ -34,8 +34,57 @@
 		6, 10, 15, 21, 6, 10, 15, 21, 6, 10, 15, 21, 6, 10, 15, 21
 	];
 
-	var _constructMD5 = function(options) {
+	var MD5_STATE_IDENTITY = new Int32Array([
+		0x67452301,
+		0xefcdab89,
+		0x98badcfe,
+		0x10325476
+	]);
 
+	var _constructRounds = function(roundStart, roundEnd) {
+		var rounds = "";
+		var a = "a";
+		var b = "b";
+		var c = "c";
+		var d = "d";
+		var temp;
+		var k;
+		var q;
+
+		for(var i = roundStart;i < roundEnd;i++) {
+			if(i < 16) {
+				q = b + "&" + c + "|~" + b + "&" + d;
+				k = i;
+			}else if(i < 32) {
+				q = d + "&" + b + "|~" + d + "&" + c;
+				k = (5 * i + 1) % 16;
+			}else if(i < 48) {
+				q = b + "^" + c + "^" + d;
+				k = (3 * i + 5) % 16;
+			}else{
+				q = c + "^(" + b + "|~" + d + ")";
+				k = (7 * i) % 16;
+			}
+
+			temp = d;
+			d = c;
+			c = b;
+			b = a;
+			a = temp;
+
+			rounds +=
+				b + "+=" + q + "+k[" + MD5_COMPRESS_DISTRIBUTION[k] + "]+" + MD5_COMPRESS_CONSTANTS[i] + "|0;\n" +
+				b +  "=" + "(" + b + "<<" + MD5_COMPRESS_ROL[i] + "|" + b + ">>>" + (32 - MD5_COMPRESS_ROL[i]) + ")+" + c + "|0;\n";
+		}
+
+		return rounds;
+	};
+
+	var _constructMD5 = function(options) {
+		options = options || {};
+
+		var rounds0to4  = _constructRounds(0,  4);
+		var rounds4to64 = _constructRounds(4, 64);
 	};
 
 	g.MD5Factory = {
